@@ -1,0 +1,39 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.parsler.parsler.SignatureActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="?android:attr/actionBarSize"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <!-- I N T E R N E T   C O N N E C T I O N -->
+    <TextView
+        android:id="@+id/internet_connection"
+        style="@style/No_Internet_Connection"/>
+
+
+    <!-- C A N V A S -->
+    <android.gesture.GestureOverlayView
+        android:id="@+id/signaturePad"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:background="#FFF"
+        android:eventsInterceptionEnabled="true"
+        android:fadeEnabled="false"
+        android:gestureColor="#000"
+        android:gestureStrokeLengthThreshold="0.1"
+        android:gestureStrokeType="multiple"
+        android:orientation="vertical" >
+    </android.gesture.GestureOverlayView>
+
+
+    <!-- C A L L   T O   A C T I O N -->
+    <Button
+        android:id="@+id/DoneButton"
+        android:onClick="saveSignature"
+        style="@style/Signature_Submit" />
+
+</LinearLayout>

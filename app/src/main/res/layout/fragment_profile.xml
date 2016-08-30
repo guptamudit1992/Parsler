@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.parsler.parsler.MainActivity$PlaceholderFragment">
+
+    <data>
+
+        <variable
+            name="profileObject"
+            type="com.example.parsler.parsler.Models.ProfileFragmentObject"/>
+
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="?android:attr/actionBarSize"
+        android:background="@drawable/background">
+
+
+        <!--ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="50dp"
+            android:indeterminate="true"/-->
+
+
+
+        <!-- P R O F I L E   I N F O R M A T I O N -->
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- D I S P L A Y   P I C T U R E -->
+                <ImageView
+                    android:src="@drawable/dp"
+                    style="@style/Profile_Image"/>
+
+                <!-- R A T I N G -->
+                <RatingBar
+                    android:layout_gravity="center"
+                    android:id="@+id/rating_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:rating="@{profileObject.rating}"
+                    android:stepSize="1"
+                    android:scaleX="0.8"
+                    android:scaleY="0.8"
+                    android:progressDrawable="@drawable/rating_star"
+                    style="?android:attr/ratingBarStyleIndicator"/>
+
+                <!-- N A M E -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{profileObject.username}"
+                    style="@style/Profile_Name"/>
+
+                <!-- C O N T A C T   D E T A I L -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{@string/profile_contact + " " + profileObject.runnerPhone}'
+                    style="@style/Profile_Mobile_Number"/>
+
+
+                <!-- S T A T U S   B A R -->
+                <!--RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Status_Bar_Container">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/onduty"
+                        style="@style/Status"/>
+
+                    <Switch
+                        android:id="@+id/backup_photos_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:background="@color/black"/>
+
+                </RelativeLayout-->
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <!-- I N F O R M A T I O N -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/helptext"
+            style="@style/Help_Information"/>
+
+    </RelativeLayout>
+
+</layout>

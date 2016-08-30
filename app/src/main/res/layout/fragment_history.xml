@@ -1,0 +1,79 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    android:paddingTop="?android:attr/actionBarSize"
+    tools:context="com.example.parsler.parsler.MainActivity$PlaceholderFragment">
+
+
+    <!-- P R O G R E S S   L O A D E R -->
+    <ProgressBar
+        android:id="@+id/loader"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="50dp"/>
+
+
+    <!-- P A G E   C O N T E N T -->
+    <LinearLayout
+        android:id="@+id/content"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- H I S T O R Y   C O M P L E T E D   O R D E R S   C O U N T -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Section_Header_Container">
+
+            <TextView
+                android:id="@+id/history_order_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Section_Header_Text"/>
+
+            <ImageView
+                android:id="@+id/order_icon"
+                style="@style/Section_Header_Icon"/>
+
+        </RelativeLayout>
+
+
+        <!-- L I S T   O F   O R D E R S -->
+        <ScrollView
+            android:id="@+id/history_order_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/history_order_list"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+        <!-- N O   O R D E R   C O M P L E T E -->
+        <TextView
+            android:id="@+id/no_history_order"
+            android:text="@string/no_history_order"
+            style="@style/No_Order_Count_Message"/>
+
+    </LinearLayout>
+
+</LinearLayout>

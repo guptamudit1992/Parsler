@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="pickupObject"
+            type="com.example.parsler.parsler.Models.PickupSummaryObject"/>
+
+    </data>
+
+
+    <!-- P I C K U P   C A R D -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- P I C K U P   D E T A I L -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            style="@style/Order_Card_Container">
+
+            <TextView
+                android:id="@+id/pickupId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text='@{"" + pickupObject.pickupId}'
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/pickupIsActive"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{pickupObject.isActive}"
+                android:visibility="gone"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text='@{@string/pickup_header + " " + pickupObject.pickupId}'
+                style="@style/Order_Header"/>
+
+            <TextView
+                android:text="@string/pickup_loc"
+                style="@style/Order_Title" />
+
+            <TextView
+                android:text="@{pickupObject.pickupLocation}"
+                style="@style/Order_Text" />
+
+            <TextView
+                android:text="@string/drop_loc"
+                style="@style/Order_Title" />
+
+            <TextView
+                android:text="@{pickupObject.dropLocation}"
+                style="@style/Order_Text" />
+
+            <TextView
+                android:text='@{@string/status + " " + pickupObject.status}'
+                style="@style/Order_Status"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:src="@drawable/ic_send_white_36dp"
+            style="@style/Order_Icon"/>
+
+    </RelativeLayout>
+
+</layout>

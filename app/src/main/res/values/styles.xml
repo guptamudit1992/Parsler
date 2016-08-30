@@ -1,0 +1,539 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@android:color/transparent</item>
+        <item name="windowActionBarOverlay">true</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:typeface">monospace</item>
+    </style>
+
+
+    <!-- G l o b a l   C o m p o n e n t s -->
+    <style name="No_Internet_Connection">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/dark_green</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">@string/no_internet_connection</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:typeface">monospace</item>
+    </style>
+
+
+    <!-- C u s t o m   C o m p o n e n t s -->
+    <style name="Card_Container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/card</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
+    <style name="Order_Id">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/card</item>
+        <item name="android:padding">7dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Title_Message">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Main_Message">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">15dp</item>
+        <item name="android:lineSpacingExtra">10dp</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Helptext">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:lineSpacingExtra">5dp</item>
+    </style>
+
+
+    <!-- L o g i n -->
+    <style name="Login_Title">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:src">@drawable/logo_white</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="Login_Field">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/input_field</item>
+        <item name="android:textColorHint">@color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:padding">17dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="Login_Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/dark_grey_button</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:layout_marginTop">40dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+
+    <!-- A c t i v e   O r d e r s -->
+    <style name="Section_Header_Container">
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <style name="Section_Header_Text">
+        <item name="android:background">@drawable/info_card</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:layout_marginTop">9dp</item>
+        <item name="android:layout_marginLeft">50dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <style name="Section_Header_Icon">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:src">@drawable/ic_dialpad_white_36dp</item>
+        <item name="android:background">@drawable/green_icon_holder</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:padding">15dp</item>
+    </style>
+
+    <style name="No_Order_Count_Message">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:lineSpacingExtra">5dp</item>
+        <item name="android:padding">30dp</item>
+    </style>
+
+
+    <!-- P r o f i l e -->
+    <style name="Profile_Image">
+        <item name="android:layout_width">150dp</item>
+        <item name="android:layout_height">150dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:background">@drawable/profile_image_placeholder</item>
+        <item name="android:layout_margin">15dp</item>
+    </style>
+
+    <style name="Profile_Name">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Profile_Mobile_Number">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="Status_Bar_Container">
+        <item name="android:background">@drawable/status_bar</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_margin">20dp</item>
+    </style>
+
+    <style name="Status">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:padding">7dp</item>
+    </style>
+
+    <style name="Help_Information">
+        <item name="android:background">@color/dark_grey</item>
+        <item name="android:textSize">10dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:lineSpacingExtra">5dp</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+
+    <!-- O r d e r   S u m m a r y -->
+    <style name="Pickup_Card_Outer">
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
+    </style>
+
+    <style name="Pickup_Card" parent="Card_Container">
+        <item name="android:background">@color/white</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:layout_marginBottom">0dp</item>
+    </style>
+
+    <style name="Pickup_Header">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/header_card</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:layout_marginTop">9dp</item>
+        <item name="android:layout_marginLeft">50dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <style name="Pickup_Header_Icon">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:background">@drawable/green_icon_holder</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:padding">15dp</item>
+    </style>
+
+    <style name="Pickup_Timestamp">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">right</item>
+        <item name="android:textSize">9sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <style name="Pickup_Name">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="Pickup_Location" parent="Main_Message">
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <style name="Step_Complete" parent="Pickup_Button_Holder">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/dark_green</item>
+        <item name="android:text">@string/completed</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">15dp</item>
+    </style>
+
+    <style name="Step_Cancel" parent="Pickup_Button_Holder">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/dark_grey</item>
+        <item name="android:text">@string/cancelled</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">15dp</item>
+    </style>
+
+    <style name="Pickup_Button_Holder">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
+    </style>
+
+    <style name="Pickup_Button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">8dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/button_card</item>
+        <item name="android:padding">15dp</item>
+    </style>
+
+    <style name="Payment_Container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:background">@color/dark_green</item>
+    </style>
+
+    <style name="Payment">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/payment_card</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_margin">15dp</item>
+    </style>
+
+    <style name="Payment_Title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+
+    <style name="Payment_Mode">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/payment_card</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">8dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+    </style>
+
+    <style name="Payment_Amount">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+    </style>
+
+    <style name="Payment_Collection_Point">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="Payment_Complete">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/dark_grey</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <!-- O r d e r   C a r d -->
+    <style name="Order_Card_Container">
+        <item name="android:background">@drawable/pickup_card</item>
+        <item name="android:layout_margin">20dp</item>
+    </style>
+
+    <style name="Order_Header">
+        <item name="android:background">@color/dark_grey</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:padding">15dp</item>
+    </style>
+
+    <style name="Order_Title" parent="Title_Message">
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+
+    <style name="Order_Text" parent="Main_Message">
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+
+    <style name="Order_Status">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/dark_grey</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">10dp</item>
+        <item name="android:lineSpacingExtra">5dp</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="Order_Icon">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@drawable/icon_circle</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:padding">13dp</item>
+        <item name="android:layout_marginRight">40dp</item>
+    </style>
+
+    <style name="Order_Cancel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">right</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/button_card</item>
+        <item name="android:clickable">true</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+
+    <!-- D i g i t a l   S i g n a t u r e -->
+    <style name="Signature_Submit">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:text">@string/checkpoint_complete</item>
+        <item name="android:background">@color/dark_green</item>
+    </style>
+
+
+    <!-- N o t i f i c a t i o n -->
+    <style name="Notification_Card_Container">
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <style name="Notification_Card" parent="Card_Container">
+        <item name="android:background">@color/white</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:layout_marginTop">30dp</item>
+    </style>
+
+    <style name="Notificaiton_Header">
+        <item name="android:background">@drawable/header_card</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:layout_marginTop">9dp</item>
+        <item name="android:layout_marginLeft">50dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <style name="Notificaiton_Icon">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:background">@drawable/green_icon_holder</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:padding">15dp</item>
+    </style>
+
+    <style name="Notification_Order_Id" parent="Order_Id">
+        <item name="android:layout_marginBottom">15dp</item>
+    </style>
+
+    <style name="Notification_Timestamp">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">right</item>
+        <item name="android:textSize">9sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <style name="Notification_Message" parent="Main_Message">
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+
+    <!-- D i a l o g -->
+    <style name="Dialog_Header">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">@string/dialog_header</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:background">@color/dark_green</item>
+    </style>
+
+    <style name="Dialog_Cancellation_Header">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">@string/dialog_cancellation_header</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:background">@color/dark_green</item>
+
+    </style>
+
+    <style name="Dialog_Message">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">@string/dialog_confirmation</item>
+        <item name="android:textColor">@color/dark_grey</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:lineSpacingExtra">10dp</item>
+        <item name="android:padding">15dp</item>
+    </style>
+
+    <style name="Dialog_Cancellation_Message">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">@string/dialog_cancellation_confirmation</item>
+        <item name="android:textColor">@color/dark_grey</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:lineSpacingExtra">10dp</item>
+        <item name="android:padding">15dp</item>
+    </style>
+
+    <style name="Dialog_Icon">
+        <item name="android:layout_width">120dp</item>
+        <item name="android:layout_height">120dp</item>
+        <item name="android:src">@drawable/ic_directions_bike_white_36dp</item>
+        <item name="android:background">@drawable/green_icon_holder</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:padding">25dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
+    </style>
+
+
+    <!-- E x c e p t i o n -->
+    <style name="Go_To_Homepage">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:clickable">true</item>
+        <item name="android:text">@string/go_to_homepage</item>
+        <item name="android:background">@color/dark_green</item>
+        <item name="android:paddingLeft">30dp</item>
+        <item name="android:paddingRight">30dp</item>
+    </style>
+</resources>

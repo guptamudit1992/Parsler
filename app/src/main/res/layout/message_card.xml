@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="messageObject"
+            type="com.example.parsler.parsler.Models.PickupSummaryObject"/>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Notification_Card_Container">
+
+        <LinearLayout
+            android:orientation="vertical"
+            style="@style/Notification_Card">
+
+            <TextView
+                android:id="@+id/pickupId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text='@{"" + messageObject.pickupId}'
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/pickupIsActive"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{messageObject.isActive}"
+                android:visibility="gone"/>
+
+            <TextView
+                android:text="@{messageObject.timestamp}"
+                style="@style/Notification_Timestamp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/notification_assigned"
+                style="@style/Notification_Message"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/notification_helptext"
+                style="@style/Helptext"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{@string/notification_header + " " + messageObject.pickupId}'
+            style="@style/Notificaiton_Header"/>
+
+        <ImageView
+            android:src="@drawable/ic_local_post_office_white_36dp"
+            style="@style/Notificaiton_Icon"/>
+
+    </RelativeLayout>
+
+</layout>

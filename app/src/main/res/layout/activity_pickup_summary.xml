@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.parsler.parsler.PickupSummaryActivity">
+
+
+    <!-- M O D E L   D A T A -->
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="pickupSummaryObject"
+            type="com.example.parsler.parsler.Models.PickupSummaryObject"/>
+
+    </data>
+
+
+    <!-- C O N T E N T -->
+    <RelativeLayout
+        android:paddingTop="?android:attr/actionBarSize"
+        android:background="@drawable/background"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <!-- I N T E R N E T   C O N N E C T I O N -->
+        <TextView
+            android:id="@+id/internet_connection"
+            style="@style/No_Internet_Connection"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="100dp"
+            android:layout_marginTop="10dp"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <!-- P I C K U P   C A R D -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Pickup_Card_Outer">
+
+                        <LinearLayout
+                            android:id="@+id/pickup_card"
+                            android:orientation="vertical"
+                            style="@style/Pickup_Card">
+
+                            <!-- O R D E R   C A N C E L L A T I O N -->
+                            <TextView
+                                android:onClick="cancelOrder"
+                                android:text="@string/cancel"
+                                android:visibility="@{pickupSummaryObject.pickupIsCompleted ?  View.GONE : View.VISIBLE}"
+                                style="@style/Order_Cancel"/>
+
+                            <TextView
+                                android:text="@{pickupSummaryObject.pickupTimestamp}"
+                                style="@style/Pickup_Timestamp"/>
+
+                            <TextView
+                                android:text="@{pickupSummaryObject.pickupEntity}"
+                                style="@style/Pickup_Name"/>
+
+                            <TextView
+                                android:text="@{pickupSummaryObject.pickupLocation}"
+                                style="@style/Pickup_Location"/>
+
+                            <TextView
+                                android:text='@{@string/pickupETA + " " + pickupSummaryObject.pickupETA}'
+                                android:visibility="@{pickupSummaryObject.pickupIsCompleted ?  View.GONE : View.VISIBLE}"
+                                style="@style/Helptext"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_below="@+id/pickup_card"
+                            android:visibility="@{pickupSummaryObject.isCancelled ?  View.GONE : View.VISIBLE}"
+                            style="@style/Pickup_Button_Holder">
+
+                            <TextView
+                                android:text="@string/call"
+                                android:onClick="callCustomer"
+                                style="@style/Pickup_Button"/>
+
+                            <TextView
+                                android:text="@string/navigate"
+                                android:onClick="fetchPickupPoint"
+                                style="@style/Pickup_Button"/>
+
+                            <TextView
+                                android:text="@string/complete"
+                                android:onClick="pickupComplete"
+                                style="@style/Pickup_Button"/>
+
+                        </LinearLayout>
+
+
+                        <!-- S E C T I O N   C O M P L E T E D -->
+                        <TextView
+                            android:layout_below="@+id/pickup_card"
+                            android:visibility="@{pickupSummaryObject.pickupIsCompleted ?  View.VISIBLE : View.GONE}"
+                            style="@style/Step_Complete" />
+
+
+                        <!-- S E C T I O N   C A N C E L L E D -->
+                        <TextView
+                            android:layout_below="@+id/pickup_card"
+                            android:visibility="@{pickupSummaryObject.isCancelled ?  View.VISIBLE : View.GONE}"
+                            style="@style/Step_Cancel" />
+
+
+                        <!-- C A R D   H E A D E R -->
+                        <TextView
+                            android:text="@string/pickup_loc"
+                            style="@style/Pickup_Header"/>
+
+                        <ImageView
+                            android:src="@drawable/ic_dialpad_white_36dp"
+                            style="@style/Pickup_Header_Icon"/>
+
+                    </RelativeLayout>
+
+
+
+                    <!-- D R O P   C A R D -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Pickup_Card_Outer">
+
+                        <LinearLayout
+                            android:id="@+id/drop_card"
+                            android:orientation="vertical"
+                            style="@style/Pickup_Card">
+
+                            <TextView
+                                android:text="@{pickupSummaryObject.dropTimestamp}"
+                                style="@style/Pickup_Timestamp"/>
+
+                            <TextView
+                                android:text="@{pickupSummaryObject.dropEntity}"
+                                style="@style/Pickup_Name"/>
+
+                            <TextView
+                                android:text="@{pickupSummaryObject.dropLocation}"
+                                style="@style/Pickup_Location"/>
+
+                            <TextView
+                                android:text='@{@string/dropETA + " " + pickupSummaryObject.dropETA}'
+                                android:visibility="@{pickupSummaryObject.dropIsCompleted ? View.GONE : View.VISIBLE}"
+                                style="@style/Helptext"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_below="@+id/drop_card"
+                            android:visibility="@{pickupSummaryObject.dropIsCompleted ? View.GONE : View.VISIBLE}"
+                            style="@style/Pickup_Button_Holder">
+
+                            <TextView
+                                android:text="@string/call"
+                                android:onClick="callCustomer"
+                                style="@style/Pickup_Button"/>
+
+                            <TextView
+                                android:text="@string/navigate"
+                                android:onClick="fetchDropPoint"
+                                style="@style/Pickup_Button"/>
+
+                            <TextView
+                                android:text="@string/complete"
+                                android:onClick="dropComplete"
+                                style="@style/Pickup_Button"/>
+
+                        </LinearLayout>
+
+
+                        <!-- S E C T I O N   C O M P L E T E D -->
+                        <TextView
+                            android:layout_below="@+id/drop_card"
+                            android:visibility="@{pickupSummaryObject.dropIsCompleted ? View.VISIBLE : View.GONE}"
+                            style="@style/Step_Complete" />
+
+                        <!-- S E C T I O N   C A N C E L L E D -->
+                        <TextView
+                            android:layout_below="@+id/drop_card"
+                            android:visibility="@{pickupSummaryObject.isCancelled ?  View.VISIBLE : View.GONE}"
+                            style="@style/Step_Cancel" />
+
+
+                        <!-- C A R D   H E A D E R -->
+                        <TextView
+                            android:text="@string/drop_loc"
+                            style="@style/Pickup_Header"/>
+
+                        <ImageView
+                            android:src="@drawable/ic_dialpad_white_36dp"
+                            style="@style/Pickup_Header_Icon"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+
+
+        <!-- P A Y M E N T   M O D E -->
+        <LinearLayout
+            style="@style/Payment_Container">
+
+            <TextView
+                android:text="@string/payment_received"
+                android:visibility="@{pickupSummaryObject.isPaymentSuccess ? View.VISIBLE : View.GONE}"
+                style="@style/Payment"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="@{pickupSummaryObject.isPaymentSuccess ? View.GONE : View.VISIBLE}">
+
+                <TextView
+                    android:id="@+id/payment_title"
+                    android:text="@string/payment"
+                    style="@style/Payment_Title"/>
+
+                <TextView
+                    android:layout_toRightOf="@+id/payment_title"
+                    android:text="@{pickupSummaryObject.paymentMode}"
+                    style="@style/Payment_Mode"/>
+
+                <TextView
+                    android:layout_alignParentRight="true"
+                    android:text='@{pickupSummaryObject.paymentCurrency + " " + pickupSummaryObject.paymentAmount + " /-"}'
+                    style="@style/Payment_Amount"/>
+
+                <TextView
+                    android:id="@+id/payment_detail"
+                    android:layout_below="@+id/payment_title"
+                    android:text='@{@string/payment_collect + " " + pickupSummaryObject.collectionPoint}'
+                    style="@style/Payment_Collection_Point"/>
+
+
+                <TextView
+                    android:layout_below="@+id/payment_detail"
+                    android:clickable="true"
+                    android:onClick="paymentComplete"
+                    android:text="@string/payment_complete"
+                    style="@style/Payment_Complete"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

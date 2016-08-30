@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.parsler.parsler" >
+
+    <!-- Permission -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:name="android.support.multidex.MultiDexApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:logo="@drawable/logo_white"
+        android:theme="@style/AppTheme" >
+
+        <!-- Login Activity -->
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:windowSoftInputMode="adjustPan" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Main Activity -->
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_profile" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </activity>
+
+        <!-- Order Summary Activity -->
+        <activity
+            android:name=".PickupSummaryActivity"
+            android:label="@string/title_activity_order_summary"
+            android:parentActivityName=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.parsler.parsler.MainActivity" />
+        </activity>
+
+        <!-- Signature Activity -->
+        <activity
+            android:name=".SignatureActivity"
+            android:label="@string/title_activity_signature"
+            android:parentActivityName=".PickupSummaryActivity" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PickupSummaryActivity" />
+        </activity>
+
+        <!-- Geo Location Service -->
+        <service
+            android:name=".Services.GeoLocationService"
+            android:exported="false" >
+        </service>
+
+        <!-- Order Tracking Service -->
+        <service
+            android:name=".Services.OrderTrackingService"
+            android:exported="false" >
+        </service>
+
+        <!-- AWS Service -->
+        <service
+            android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService"
+            android:enabled="true" >
+        </service>
+
+        <!-- Fabric Crashlytics Service -->
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="9b2d36bd02767db6a32091d22609a625cd47daf6" />
+
+        <activity
+            android:name=".ExceptionActivity"
+            android:label="@string/title_activity_exception" >
+        </activity>
+    </application>
+
+</manifest>

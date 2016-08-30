@@ -1,0 +1,29 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.parsler.parsler.ExceptionActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="?android:attr/actionBarSize"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+
+    <!-- I N T E R N E T   C O N N E C T I O N -->
+    <TextView
+        android:id="@+id/internet_connection"
+        style="@style/No_Internet_Connection"/>
+
+
+    <!-- E R R O R   M E S S A G E -->
+    <TextView
+        android:text="@string/something_broke"
+        style="@style/No_Order_Count_Message"/>
+
+
+    <!-- G O   T O   D A S H B O A R D -->
+    <Button
+        android:onClick="goToHomepage"
+        style="@style/Go_To_Homepage"/>
+
+</LinearLayout>

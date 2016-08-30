@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:paddingTop="?android:attr/actionBarSize"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- P R O G R E S S   L O A D E R -->
+        <ProgressBar
+            android:id="@+id/loader"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="50dp"/>
+
+
+        <!-- P A G E   C O N T E N T -->
+        <LinearLayout
+            android:id="@+id/content"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- M E S S A G E   L I S T -->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/message_list"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"/>
+
+
+            <!-- N O   M E S S A G E   R E C E I V E D -->
+            <TextView
+                android:id="@+id/no_message_received"
+                android:text="@string/no_messages"
+                style="@style/No_Order_Count_Message"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

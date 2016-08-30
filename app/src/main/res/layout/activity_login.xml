@@ -1,0 +1,49 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillViewport="true"
+    android:background="@drawable/background"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <!-- I N T E R N E T   C O N N E C T I O N -->
+        <TextView
+            android:id="@+id/internet_connection"
+            style="@style/No_Internet_Connection"/>
+
+        <!-- P A R S L E R   L O G O -->
+        <ImageView
+            android:id="@+id/title"
+            style="@style/Login_Title"/>
+
+        <!-- U S E R N A M E -->
+        <EditText
+            android:id="@+id/username"
+            android:hint="@string/username"
+            android:inputType="text"
+            android:layout_above="@+id/password"
+            style="@style/Login_Field"/>
+
+        <!-- P A S S W O R D -->
+        <EditText
+            android:id="@+id/password"
+            android:hint="@string/password"
+            android:inputType="textVisiblePassword"
+            android:layout_above="@+id/signinButton"
+            style="@style/Login_Field"/>
+
+        <!-- S I G N   I N -->
+        <Button
+            android:id="@+id/signinButton"
+            android:text="@string/signin"
+            android:onClick="signinRequest"
+            style="@style/Login_Button"/>
+
+    </RelativeLayout>
+
+</ScrollView>
